@@ -1,0 +1,47 @@
+\documentclass{scrartcl}
+\usepackage{amsmath,amssymb}
+\setkomafont{disposition}{\normalfont\bfseries}
+
+\title{Abstract Algebra}
+\subtitle{Homework 5: 8.5, 8.11, 8.24, 1}
+\author{Kenny Roffo}
+\date{Due March 6}
+
+\begin{document}
+
+\maketitle
+ 
+\textbf{8.5)} Write down all the elements of $S_4$, and indicate which ones are 1in $A_4$. Check your results against Theorem 8.5.\\
+
+$S_4=\{(1234),(1243),(1324),(1342),(1423),(1432),(123),(132),(124),(142),(134),(143),$\\
+
+$(234),(243),(12),(13),(14),(23),(24),(34),(12)(34),(13)(24),(14)(23),e\}$\\\\
+
+$A_4=\{(123),(132),(124),(142),(134),(143),(234),(243),(12)(34),(13)(24),(14)(23),e\}$\\\\
+
+\textbf{8.11a)} Give an example of two elements $x$ and $y$ in $S_9$ such that $o(x)=o(y)=5$ and $o(xy)=9$:\\
+
+Consider $x=(12345)$, $y=(56789)$. Then $o(x)=o(y)=5$, and $xy=(12345)(56789)=(123456789)$. Then $o(xy)=9$.\\\\
+
+\textbf{8.11b)} What is the largest order that an element of $S_9$ can have?\\
+
+The largest order of an element of $S_9$ would be of the form (4-cycle)(5-cycle) together which has order 20.\\
+
+\textbf{8.24)} If $H$ and $K$ are subgroups of a group $G$ then $HK$ denotes the set of all elements of $G$ that can be written in the form $hk$, with $h \in H$ and $k \in K$. Find subgroups $H$ and $K$ of $S_3$ such that $HK$ is not a subgroup of $S_3$:\\
+
+Consider $H=\{(12),e\} \le S_3$, $K=\{(13),e\} \le S_3$. Then $HK=\{e,(12),(13),(12)(13)\}=\{e,(12),(13),(132)\}$. Note that $(132)^{-1}=(123)$, but $(123)$ is not an element of $HK$. Thus $HK$ is not closed under inverses, so $HK$ is not a subgroup of $S_3$.\pagebreak
+
+\textbf{1)} For all subgroups $H$ of $S_3$, find $N_{S_3}(H)$.\\
+
+$H_1=\{e\}$ is a normal subgroup of $S_3$ with normalizer $N_{S_3}(H_1)=S_3$ since $e$ commutes with everything in the group (this implies $^eS_3=S_3$).\\
+
+$H_2=\{(12),e\}$ is a subgroup of $S_3$ with normalizer $N_{S_3}(H_2)=H_2$ since $(12)$ is its own inverse and $e$ is always in the normalizer of a group.\\
+
+$H_3=\{(13),e\}$ is a subgroup of $S_3$ with normalizer $N_{S_3}(H_3)=H_3$ since $(13)$ is its own inverse and $e$ is always in the normalizer of a group.\\
+
+$H_4=\{(23),e\}$ is a subgroup of $S_3$ with normalizer $N_{S_3}(H_4)=H_4$ since $(23)$ is its own inverse and $e$ is always in the normalizer of a group.\\
+
+$H_5=\{(123),(132),e\}$ is a normal subgroup of $S_3$ with normalizer $N_{S_3}(H_5)=S_3$ since $(123)$ is the inverse of $(132)$ and $e$ is always in the normalizer of a group.\\
+
+$S_3$ is a normal subgroup of $S_3$ with normalizer $N_{S_3}(S_3)=S_3$ since $N_G(G)=G$ for all groups $G$.\\
+\end{document}

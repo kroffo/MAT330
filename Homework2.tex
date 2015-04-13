@@ -1,0 +1,29 @@
+\documentclass{scrartcl}
+\usepackage{amsmath,amssymb}
+\setkomafont{disposition}{\normalfont\bfseries}
+
+\title{Abstract Algebra}
+\subtitle{Homework 2: 2.2, 3.3, 3.10}
+\author{Kenny Roffo}
+\date{Due February 6}
+\begin{document}
+
+\maketitle
+
+(2.10) Let $G$ be the set of all $2\times 2$ matrices $\begin{pmatrix} a & b \\ -b & a \end{pmatrix}$ where $a,b \in \mathbb{R}$ and $a^2 + b^2\ne 0$. Show that $G$ forms a group under matrix multiplication:\\\\
+    (i) Matrix multiplication is a binary operator \checkmark\\
+    (ii) Matrix multiplication is associative \checkmark\\
+    (iii) $\begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}$ is the identity \checkmark\\
+    (iv) Existence of inverses? I claim yes:
+
+\em Proof: \em We want to show all $2\times 2$ matrices $\begin{pmatrix} a & b \\ -b & a \end{pmatrix}$ where $a,b \in \mathbb{R}$ and $a^2 + b^2\ne 0$ are invertible. Recall the Invertible Matrix Theorem which includes that an $n\times n$ matrix is invertible if and only if its degterminant is nonzero. Let $A=\begin{pmatrix} a & b \\ -b & a \end{pmatrix}$ be a matrix in the set. Then the determinant of $A$ is $a^2+b^2$. By definition on the set, $a^2+b^2\ne 0$, so the determinant of our arbitrary matrix has determinant 0, and is thus invertible. Therefore all matrices in the set have inverses.\\
+
+Thus all of the group axioms are satisfied so this set under matrix multiplication forms a group.\\
+
+(3.3) Find elements $A, B, C$ of $GL(2,\mathbb{R})$ such that $AB=BC$ but $A\ne C$:
+    Consider the matrices $A=\begin{pmatrix} 1 & 1 \\ 2 & 1 \end{pmatrix}, B=\begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}, C=\begin{pmatrix} -3 & -4 \\ \frac{7}{2} & 5\end{pmatrix}$. Obviously $A\ne C$, but $AB=\begin{pmatrix} 4 & 6 \\ 5 & 8 \end{pmatrix}$.\\
+
+(3.11) Let $(G,*)$ be a group such that $x^2=e$ for all $x \in G$. Show that $(G,*)$ is abelian.\\
+\em Proof: \em We want to show $(G,*)$ is abelian. That is, we want to show $*$ is commutative on $G$. Let $a$ and $b$ be elements of $G$. Consider the equation $(a*b)*(a*b)=e$. Multiplying (*ing) on the left of both sides, we have $a*a*b*a*b=a*e$ which simplifies to $b*a*b=a$. Now multiplying by $b$ on the right, we have $b*a*b*b=a*b$, which simplifies to $b*a=a*b$. Thus $*$ is commutative on $G$.
+
+\end{document}

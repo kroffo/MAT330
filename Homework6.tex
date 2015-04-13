@@ -1,0 +1,118 @@
+\documentclass{scrartcl}
+\usepackage{amsmath,amssymb}
+\setkomafont{disposition}{\normalfont\bfseries}
+
+\title{Abstract Algebra}
+\subtitle{Homework 6: 1, 2, 9.5, 9.6, 9.7}
+\author{Kenny Roffo}
+\date{Due March 11}
+
+\begin{document}
+
+\maketitle
+
+\textbf{1)} Compute $Z(A_3)$, $Z(A_4)$, and $Z(A_5)$. Before you can do that, you need to determine all of the elements of these groups. Use conjugation to check commutativity of elements.\\
+
+To answer this problem I will first prove that if $G$ is a group with $g \in G$, then $g \in Z(G) \iff ^Gg={g}$.\\
+
+\emph{Proof}: Let $G$ be a group and $g \in G$. Let us first assume $g \in Z(G)$. Then $gh=hg$ for all $h \in G$. This is true if and only if $^hg=g$ for all $h \in G$, but this is true if and only if $^Gg={g}$. So if $g \in Z(G)$ then $^Gg={g}$. Now assume $^Gg={g}$. It then follows that for every $h \in G$, $^hg=g$. But this is true if and only if $gh=hg$ which implies $g \in Z(G)$. Therefore f $^Gg={g}$ then $g \in Z(G)$. Thus we have shown $g \in Z(G)$ if and only if $^Gg={g}$.\\
+
+Now, to find the center of $A_3$ I will explicitly show how this works, but for $A_4$ and $A_5$ I will use general variables that represent the form of a cycle, and thus represent any arbitrary element of $A_n$ of that cycle structure.\\
+
+$A_3=\{e,(123),(132)\}$. Obviously $^{A_3}e=\{e\}$, so $e \in Z(G)$ as it is for all groups. Also, $^{A_3}(123)=\{(123)\}$ and $^{A_3}(132)=\{(132)\}$. Therefore $Z(A_3)=A_3$.\\
+
+Now consider $A_4$ which has elements of the forms $(abc)$ and $(ab)(cd)$ (and of course $e$) where $a$, $b$, $c$ and $d$ be distinct but arbitrary (so $(abc)$ represents all elements of this form). We see $^{(adc)}(abc)=(dba)\ne (abc)$, thus $(abc)$ is not in the center of $A_4$. So no three-cycles of $A_4$ are in $Z(A_4)$. Similarly, $^{adb}(ab)(cd)=(da)(cb)\ne(ab)(cd)$, so no elements of $A_4$ with the form $(ab)(cd)$ are in $Z(A_4)$. Thus $Z(A_4)={e}$\\
+
+At last consider $A_5$ which has elements of the forms $(abc)$, $(ab)(cd)$ and $(abcde)$. For the same reasons as for $A_4$ no elements of $A_5$ with the form $(abc)$ or $(ab)(cd)$ are in $Z(A_5)$. Also, $^{(ace)}(abcde)=(cbeda) \ne (abcde)$, thus no elements of the form $(abcde)$ are in the center of $A_5$. Therefore $Z(A_5)={e}$\pagebreak
+
+\textbf{2)} Determine the conjugacy classes of $A_3, A_4$ and $A_5$.\\
+
+$A_3$ has three conjugacy classes, $\overline{e}$, $\overline{(123)}$ and $\overline{(132)}$ as shown previously in problem 1.\\
+
+To find the conjugacy classes of $A_4$ and $A_5$ will require some work.\\
+
+To start we will look at $A_4$ which has cycles of the types $e$, $(abc)$ and $(ab)(cd)$. Obviously $e$ is its own conjugacy class $\overline{e}=\{e\}$. Now we must find the conjugacy classes of the three cycles, and the bicycles. 
+
+To start we will consider the three cycles. Let $(abc)$ be an arbitrary three cycle in $A_4$. We must find what $^x(abc)$ can be for $x \in A_4$. It is easiest to find what can happen to $(abc)$ arbitrarily, rather than to go through every specific circumstance. Is it possible for $^x(abc)$ to be $(dbc)$? Then $x=(ad)$, which is an odd permutation, so this is not possible. Thus we now know switching one part of a three cycle with the fourth thing being acted on (here $d$) is not possible. So $\overline{(abc)}$ does not contain $(dbc)$, $(adc)$, or $(abd)$. now what about switching the order of two parts of the perumuation? Again, $x$ would have to be a transposition, so this is not allowed, so $(acb)$ is not in $\overline{(abc)}$. We now consider combining the previous two cases, by considering replacing one part with the 4th thing being acted on, and switching the other two parts of the three cycle. In this case, let's say we want $^x(abc)=(dcb)$. This would mean $x=(ad)(bc)$, which is part of $A_4$, so this is part of the conjugacy class of $(abc)$. A final case to consider is when two parts of the three cycle are switched, but one is replaced with the fourth thing, a specific example of which would be $^x(abc)=(acd)$. Here $x=(bcd)$, which is an even permutation, so $(acd) \in \overline{(abc)}$. Combining these four conditions we can see there are two conjugacy classes of three cycles in $A_4$, namely $\overline{(123)}=\{(123),(142),(134),(243)\}$ and $\overline{(234)}=\{(234),(143),(124),(132)\}$.
+
+Now we must consider the bicycles. There are only three of these, so it is very easy to just check them by hand. They form one conjugacy class which contains all three, $\overline{(12)(34)}$.
+
+Now we have found all of the conjugacy classes of $A_4$, $\overline{e}$, $\overline{(123)}$, $\overline{(234)}$ and $\overline{(12)(34)}$.\\
+
+To find the conjugacy classes of $A_5$ requires a bit more work. $A_5$ has all of the cycle types of $A_4$, but also five-cycles.
+
+To start, let's look at the three cycles. Let $(abc)$ be any arbitrary three-cycle in $A_5$. It is possible to switch one part of the three cycle to one of the things not included in the cycle, for example, $(abc)$ can be conjugated to $(abd)$, by utilizing both things not in the three-cycle. For example. $^{(cde)}(abc)=(abd)$. Also, since membership in a conjugacy class is an equivalence relation, this actually is all we need to know to say that there is only one conjugacy class of three-cycles in $A_5$. The parts of the three-cycle can just be cycled with the two parts not in via conjugation to get any three-cycle in $A_5$ as a result.
+
+Now consider the bicycles. An arbitrary bicycle has the form $(ab)(cd)$. Conjugating by the three cycle $(abe)$ gives $(eb)(cd)$, so we can replace any one thing being acted on with the fifth thing, which is not affected by the original permutation. For the same reason as the three-cycles, this implies that the bicycles form one conjugacy class in $A_5$.
+
+All that is left to consider is the five-cycle permutations. Letting $(abcde)$ be an arbitrary five-cycle, we see that we cannot switch two parts of the 5 cycle by conjugation, since this would require conjugating by an odd permutation, such as a transposition, which does not exist in $A_5$. For example, $^{(bc)}(abcde)=(acbde)$, so $(abcde)$ and $(acbde)$ are in different conjugacy classes. Thus there are at least two conjugacy classes for five-cycles in $A_5$. By the splitting criterion for conjugacy classes in the alternating group, this means there are two conjugacy classes of five-cycles in $A_5$, namely $\overline{(abcde)}$, and $\overline{(acbde)}$.
+
+Therefore the conjugacy classes of $A_5$ are $\overline{e}$, $\overline{(abc)}$, $\overline{(ab)(cd)}$, $\overline{(abcde)}$ and $\overline{(acbde)}$.\\
+
+The splitting criterion for conjugacy classes in the alternating group can be found here:\\
+http://groupprops.subwiki.org/wiki/Splitting\_criterion\_for\_conjugacy\_classes\_in\_the\_alternating\_group\\
+
+In short, the criterion states that a given cycle type forms exactly 1 or 2 conjugacy classes in an alternating group.\\
+
+\textbf{9.5)} Let $G=Q_8$. Find the right cosets of $H$ in $G$ for:\\
+
+\textbf{a)} $H=\left<j\right>=\{j,-1,-j,1\}$. The right cosets are, $H$ and $Hi$. We see below that $Hi$ and $Hk$ are actually the same set. Also, $H$ and $Hj$ are the same and for all cosets negating the element of $G$ on the right yields the same coset.
+\begin{center}
+\begin{align*}
+H &= \{j,-1,-j,1\}\\
+Hi &= \{k,-i,-k,i\}\\
+Hk &= \{-i,-k,i,k\}
+\end{align*}
+\end{center}
+Therefore there are only two right cosets of $H$ in $G$, namely $H$ and $Hi$.\\
+
+\textbf{b)} $H=\left<-i\right>=\{-i,-1,i,1\}$. The right cosets are, $H$ and $Hj$ by the same reasoning as for part a.\pagebreak
+
+\textbf{9.6)} Let $G=D_4=\{e,r,r^2,r^3,s,rs,r^2s,r^3s\}$ and let $H=\{e,r^2s\}$. Find the right and left cosets of $H$ in $G$:\\
+For the right cosets:\\
+\begin{center}
+\begin{align*}
+He = H &= \{e,r^2s\}\\
+Hr &= \{r, rs\}\\
+Hr^2 &= \{r^2, s\}\\
+Hr^3 &= \{r^3, r^3s\}\\
+Hs &= \{s, r^2\}\\
+H(rs) &= \{rs, r\}\\
+H(r^2s) &= \{r^2s, e\}\\
+H(r^3s) &= \{r^3s, r^3\}
+\end{align*}\\
+\end{center}
+So the right cosets of $H$ in $G$ are $H$, $Hr$, $Hr^2$, and $Hr^3$.\\
+For the left cosets:
+\begin{center}
+\begin{align*}
+eH = H &= \{e,r^2s\}\\
+rH &= \{r, r^3s\}\\
+r^2H &= \{r^2, s\}\\
+r^3H &= \{r^3, rs\}\\
+sH &= \{s, r^2\}\\
+(rs)H &= \{rs, r^3\}\\
+(r^2s)H &= \{r^2s, e\}\\
+(r^3s)H &= \{r^3s, r\}
+\end{align*}\\
+\end{center}
+So the left cosets of $H$ in $G$ are $H$, $rH$, $r^2H$, and $r^3H$.\pagebreak
+
+\textbf{9.7)} Find the right cosets of the subgroup $H=\{(0,0), (1,0), (2,0)\}$ in $\mathbb{Z}_3\times\mathbb{Z}_2$:\\
+$\mathbb{Z}_3\times\mathbb{Z}_2 = \{(0,0), (1,1), (2,0), (0,1), (1,0), (2,1)\}=\left<(1,1)\right>$\\
+
+To find the possible right cosets we have:
+\begin{center}
+\begin{align*}
+H(0,0) = H &= \{(0,0), (1,0), (2,0)\}\\
+H(1,1) &= \{(1,1), (2,1), (0,1)\}\\
+H(2,0) &= \{(2,0), (0,0), (1,0)\}\\
+H(0,1) &= \{(0,1), (1,1), (2,1)\}\\
+H(1,0) &= \{(1,0), (2,0), (0,0)\}\\
+H(2,1) &= \{(2,1), (0,1), (1,1)\}\\
+\end{align*}
+\end{center}
+
+Thus there are two right cosets of $H$ in $\mathbb{Z}_3\times\mathbb{Z}_2$, namely $H$ and $H(1,1)$. 
+
+\end{document}

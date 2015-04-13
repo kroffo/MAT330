@@ -1,0 +1,96 @@
+\documentclass{scrartcl}
+\usepackage{amsmath,amssymb}
+\setkomafont{disposition}{\normalfont\bfseries}
+
+\title{Abstract Algebra}
+\subtitle{Homework 1 Redo: 0.15, 0.18, 0.21, 1.3, 1.6}
+\author{Kenny Roffo}
+\date{Due January 30}
+\def\iff{\Leftrightarrow}
+
+\begin{document}
+
+\maketitle
+
+\section{0.15 (Unchanged)}
+Problem: By trying a few cases, guess at a formula for \[\frac{1}{1\cdot2}+\frac{1}{2\cdot3}+\frac{1}{3\cdot4}+...+\frac{1}{(n-1)\cdot n}, \hspace{1 cm} n\geq2.\]
+
+$n=2: f(2)=\frac{1}{1\cdot2}=1/2$ \newline
+
+$n=3: f(3)=\frac{1}{1\cdot2}+\frac{1}{2\cdot3}=1/2+1/6=4/6=2/3$ \newline
+
+$n=3: f(3)=\frac{1}{1\cdot2}+\frac{1}{2\cdot3}+\frac{1}{3\cdot4}=1/2+1/6+1/12=3/4$ \newline
+
+Based on the above inputs and outputs it seems that the formula is $f(x)=\frac{x}{x-1}$.
+
+\section{0.18 (Improved)}
+Problem: The \em Fibonacci sequence \em $f_1,f_2,f_3,...$ is defined as follows: \[f_1=f_2=1, f_3=2, f_4=3, f_5=5, f_6=8,...,\] and in general
+\[f_n=f_{n-1}+f_{n-2}\] for all $n\geq3$. Prove that $f_{5k}$ is divisible by 5 for every $k\geq1$, that is, 5 divides every 5th member of the sequence. \newline \newline
+
+\em Proof: \em Let $P(n)$ be the statement ``$ 5\mid F_{5n}$''. $P(1)$ is true since $F_5=5$ and $5\mid 5$. Let $k\geq1$ and assume $P(k)$ to be true. That is, assume $5\mid F_{5k}$. By definition of the Fibonacci sequence, we see: 
+\begin{align*}
+F_{5k+1}&=F_{5k}+F_{5k-1}\\
+F_{5k+2}&=F_{5k+1}+F_{5k}=(F_{5k}+F_{5k-1})+F_{5k}=2F_{5k}+F_{5k-1}\\
+F_{5k+3}&=F_{5k+2}+F_{5k+1}=(2F_{5k}+F_{5k-1})+(F_{5k}+F_{5k-1})=3F_{5k}+2F_{5k-1}\\
+F_{5k+4}&=F_{5k+3}+F_{5k+2}=(3F_{5k}+2F_{5k-1})+(2F_{5k}+F_{5k-1})=5F_{5k}+3F_{5k-1}\\
+F_{5k+5}&=F_{5(k+1)}=F_{5k+4}+F_{5k+3}=(5F_{5k}+3F_{5k-1})+(3F_{5k}+2F_{5k-1})=8F_{5k}+5F_{5k-1}
+\end{align*}
+That is, $F_{5(k+1)}=8F_{5k}+5F_{5k-1}$. Then $P(k+1)$ is true if and only if $5\mid (8F_{5k}+5F_{5k-1})$ which is true if $5\mid 8F_{5k}$ and $5\mid 5F_{5k-1}$. Thus $5\mid 8F_{5k}$ by the inductive hypothesis and clearly $5\mid 5F_{5k-1}$, so $P(k+1)$ is true. Thus $P(k)$ true implies $P(k+1)$ is true, so by mathematical induction $P(n)$ is true $\forall n \in \mathbb{Z}$. Therefore $F_{5k}$ is divisible by 5 for all $n\geq 1$.
+
+\section{0.21 (Improved)}
+Problem: The nth Fermat number is $F_n=2^{(2^n)}+1$. Prove that for every $n\geq1$ \[F_0F_1F_2...F_{n-1}=F_n-2.\]
+
+\em Proof: \em Let $P(n)$ be the statement $F_0F_1F_2...F_{n-1}=F_n-2$. $P(1)$ is true since $F_1=5$ implies $F_1-2=3$ and $F_0=3$. Let $k\geq1$ and assume $P(k)$ is true. Then $F_0F_1F_2...F_{k-1}=F_k-2$. Multiplying both sides by $F_k$, we have $F_0F_1...F_k=(2^{2^k}-1)(2^{2^k}+1)=(2^{2^{k+1}}-1)$. Therefore, $P(k+1)$ is true. Thus, by mathematical induction, $P(n)$ is true for all $n$. Therefore $F_0F_1F_2...F_{n-1}=F_n-2$ for all $n\geq1$.\newpage
+
+\section{1.3 (Improved)}
+Problem: In each case, determine whether or not the given * is a binary operation on the given set $S$.\newline
+\begin{align*}
+&a) S=\mathbb{Z}, a*b=a+b^2\text{ is a binary operation.}\\
+&b) S=\mathbb{Z}, a*b=a^2b^3\text{ is a binary operation.}\\
+&c) S=\mathbb{R}, a*b=\frac{a}{a^2+b^2}\text{ is not a binary operation.}\\
+&d) S=\mathbb{Z}, a*b=\frac{a^2+2ab+b^2}{a+b}\text{ is not a binary operation.}\\
+&e) S=\mathbb{Z}, a*b=a+b-ab\text{ is a binary operation.}\\
+&f) S=\mathbb{R}, a*b=b\text{ is a binary operation.}\\
+&g) S=\{1,-2,3,2,-4\}, a*b=|b|\text{ is not a binary operation.}\\
+&\text{\hspace{5 mm}Consider $a=1, b=-4$. Then $a*b=4$ which is not in the given set.}\\
+&h) S=\{1,6,3,2,18\}, a*b=ab\text{ is not a binary operation.}\\
+&\text{\hspace{5 mm}Consider $a=2, b=18$. Then $a*b=36$ which is not in the given set.}\\
+&i) S=\text{ the set of all $2\times2$ matrices with real entries, and if $a$ and $b$ are $2\times2$ matrices,}\\&\text{\hspace{5 mm} then $a*b$ is the $2\times2$ matrix containing the sum their corresponding elements.}\\&\hspace{5 mm}\text{ Then $a*b$ is a binary operation.}\\
+&j) S=\text{the set of all subsets of a set $X$.}, A*B=(A\Delta B)\Delta B\text{ is a binary operator.}
+\end{align*}
+
+\section{1.6 (Improved)}
+Problem: For each case in 1.3 in which * is a binary operation on $S$, determine whether * is commutative and whether it is associative.\\\\
+a)$a*b=a+b^2$ is not commutative. Consider $a=1, b=2$. Then $a*b=1+2^2=5$ and $b*a=2+1^2=3$, and $5\ne3$. Also, $a*b$ is not associative. Consider $a=1, b=2, c=3$. $(a*b)*c=(1+2^2)+3^2=14$ and $a*(b*c)=1+(2+3^2)^2=122$ and clearly $14\ne122$.\\
+
+b)$a*b=a^2b^3$ is not commutative. Consider $a=1, b=2$. Then $a*b=1^2\cdot2^3=8$ and $b*a=2^2\cdot1^3=4$ and $4\ne8$. Also, $a*b$ is not associative. Consider $a=1, b=2, c=3$. $(a*b)*c=(1^2\cdot2^3)^2\cdot3^3=1728$ and $a*(b*c)=1^2\cdot(2^2\cdot3^3)^3=1259712$ and $1728\ne1259712$.\\
+
+--- c and d are not binary operators ---\\
+
+e)$a*b=a+b-ab$ is commutative.\\
+
+\em Proof: \em We want to show $a*b=a+b-ab$ is commutative. That is, we want to show $a*b=b*a$. Plugging in to the equation, we have $a+b-ab=b+a-ba$, so $a*b$ is commutative.\\
+
+Also, $a*b$ is associative.\\
+
+\em Proof: \em We want to show $a*b=a+b-ab$ is associative. Let $a$, $b$ and $c$ be integers. We must show $(a+b-ab)+c-(a+b-ab)c=a+(b+c-bc)-a(b+c-bc)$. Distributing and removing parentheses we have $a+b+c-ab-ac-bc+abc=a+b+c-bc-ab-ac+abc$, which is clearly a true statement, thus $a*b$ is associative.\\
+
+f)$a*b=b$ is not commutative. Consider $a=1,b=2$. $a*b=2$ and $b*a=1$, but clearly $2\ne1$. However, $a*b$ is associative.\\
+
+\em Proof: \em We want to show $a*b=b$ is associative. Let $a$, $b$, and $c$ be given. $a*b=b$ is associative if and only if $(a*b)*c=a*(b*c)$. Simplyfing both sides, we see $(a*b)*c=a*(b*c)$ is true if and only if $b*c=a*c$ which is true if and only if $c=c$. Clearly $c=c$, so $a*b=b$ is associative.\\
+
+--- g and h are not binary operators ---\\
+
+i)$a*$b as defined by the question is commutative.\\
+
+\em Proof: \em Let $a=\begin{pmatrix}r_1 & r_2 \\ r_3 & r_4\end{pmatrix}$ and $b=\begin{pmatrix}r_5 & r_6 \\ r_7 & r_8\end{pmatrix}$ where $r_i\in\mathbb{R}$. Then $a*b=\begin{pmatrix}r_1+r_5 & r_2+r_6 \\ r_3+r_7 & r_4+r_8\end{pmatrix}$ and $b*a=\begin{pmatrix}r_5+r_1 & r_6+r_2 \\ r_7+r_3 & r_8+r_4\end{pmatrix}$. Since addition is commutative on real numbers, it follows that $a*b=b*a$, thus $a*b$ is commutative on the set of $2\times2$ matrices with real entries.\\
+
+Also, $a*b$ is associative.\\
+
+\em Proof: \em Let $a=\begin{pmatrix}r_1 & r_2 \\ r_3 & r_4\end{pmatrix}$, $b=\begin{pmatrix}r_5 & r_6 \\ r_7 & r_8\end{pmatrix}$, and $c=\begin{pmatrix}r_9 & r_{10} \\ r_{11} & r_{12}\end{pmatrix}$ where $r_n\in\mathbb{R}\forall n$. Then $(a*b)*c=\begin{pmatrix}(r_1+r_5)+r_9 & (r_2+r_6)+r_{10} \\ (r_3+r_7)+r_{11} & (r_4+r_8)+r_{12}\end{pmatrix}$ and $a*(b*c)=\begin{pmatrix}r_1+(r_5+r_9) & r_2+(r_6+r_{10}) \\ r_3+(r_7+r_{11}) & r_4+(r_8+r_{12})\end{pmatrix}$. The exact same matrix results in both cases since addition is associative, thus $(a*b)*c=a*(b*c)$ so $a*b$ is associative.\\
+
+j)$A*B$ as defined by the question can be simplified using that symmetric difference of sets is commutative associative. $(A\Delta B)\Delta B=A\Delta(B\Delta B)=A\Delta \emptyset=A$. Thus $A*B$ is not commutative. Consider the sets $A={1,2}, B={2,3}$. We see $A*B=({1,2}\Delta{2,3})\Delta{2,3}={1,3}\Delta{2,3}={1,2}$, but $B*A=({2,3}\Delta{1,2})\Delta{1,2}={1,3}\Delta{1,2}={2,3}$. Clearly $A*B\ne B*A$, so $A*B$ is not commutative. However, $A*B$ is associative:\\
+
+\em Proof: \em Let $A$ and $B$ be sets. We want to show $(A*B)*C=A*(B*C)$. We see $(A*B)*C=((A\Delta B)\Delta B)*C=A*C=(A\Delta C)\Delta C=A$. Likewise, we see $A*(B*C)=A*((B\Delta C)\Delta C)=A*B=(A\Delta B)\Delta B=A$. Thus $(A*B)*C=A*(B*C)$, so $A*B$ is associative.\\
+
+\end{document}

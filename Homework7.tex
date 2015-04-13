@@ -1,0 +1,62 @@
+\documentclass{scrartcl}
+\usepackage{amsmath,amssymb}
+\setkomafont{disposition}{\normalfont\bfseries}
+
+\title{Abstract Algebra}
+\subtitle{Homework 7: 11.4, 11.7, 11.15, 11.16, 11.17, 11.18, 11.29}
+\author{Kenny Roffo}
+\date{Due April 13}
+
+\newcommand{\normal}{\unlhd}
+
+\begin{document}
+\maketitle
+
+\textbf{11.4)} Let $H\normal G$ and $K\normal G$. Show that $H\cap K\normal G$.\\
+
+$H \normal G$ and $K \normal G$ implies $\forall g \in G, h \in H, k \in K$, $ghg^{-1} \in H$ and $gkg^{-1} \in K$. $\forall a \in H \cap K$, we know $a \in H$, so $\forall g \in G, gag^{-1} \in H$. Similarly, $\forall g \in G, gag^{-1} \in K$. Thus $gag^{-1} \in H \cap K, \forall g \in G$. Now to show $H \cap K \normal G$ we must only show that $H \cap G$ is a group. We do so by showing $H \cap K$ has inverses, associativity, and the identity. Since $H$ and $K$ are both subgroups of $G$, they contain the identity of $G$, so the identity $e$ is in $H \cap K$. Now let $x,y,z \in H \cap K$. Then $x,y,z \in H$, and $(xy)z=x(yz)$ since $H$ is a group, so $H \cup K$ has associativity. Lastly, we see that $x \in H, x \in K$ implies $x^{-1} \in H, x^{-1} \in K$, since $H$ and $K$ are groups, so $x^{-1} \in H \cap K$. Thus $H \cap K$ is a group, and displays the properties required to be considered normal, so $H \cap K \normal G$\\
+
+\textbf{11.7)} Let $H \normal G$ and $K \normal G$ and assume that $H \cap K = \{e\}$. Show that if $x \in H$ and $y \in K$ then $xy=yx$.\\
+
+Let $x \in H, y \in K$. Then $\forall g \in G, gxg^{-1} \in H, gyg^{-1} \in K$. Since $H$ and $K$ are subgroups of $G$, this implies $yxy^{-1} \in H, xyx^{-1} \in K$, and therefore $x(yxy^{-1}) \in H$ and $(xyx^{-1})y \in K$. Thus $xyx^{-1}y^{-1} \in H \cap K$, which implies
+\begin{align*}
+xyx^{-1}y^{-1}&=e\\
+xyx^{-1}&=y\\
+xy&=yx
+\end{align*}
+Therefore for any two normal subgroups of a group $G$ with intersection ${e}$ all elements of one subgroup commute with all elements of the other.\pagebreak
+
+\textbf{11.15} $D_4/Z(D_4)$ is ``just like'' one of the groups with which you are familiar. Which one?\\
+
+Let's start by finding the cardinality of this group, which is equal to the number of right cosets of $Z(D_4)$ in $D_4$. $D_4=\{e,r,r^2,r^3,s,rs,r^2s,r^3s\}$, and $Z(D_4)=\{e,r^2\}$. By LaGrange's Theorem we have $\frac{|G|}{|H|}=[G:H]=\frac{8}{2}=4$. We know there are only two groups of order 4, so this is either ``just like'' the Klein-4 group or $\mathbb{Z}_4$, which is cyclic. Let's list the right cosets of $Z(D_4)$ in $D_4$:
+\begin{align*}
+Z(D_4)&=\{e,r^2\}\\
+Z(D_4)r&=\{r,r^3\}\\
+Z(D_4)r^2&=\{e,r^2\}\\
+Z(D_4)r^3&=\{r,r^3\}\\
+Z(D_4)s&=\{s,r^2s\}\\
+Z(D_4)rs&=\{rs,r^3s\}\\
+Z(D_4)r^2s&=\{s,r^2s\}\\
+Z(D_4)r^3s&=\{rs,r^3s\}\\
+\end{align*}
+Thus the right cosets of $Z(D_4)$ in $D_4$ are $Z(D_4)=Z(D_4)r^2, Z(D_4)r=Z(D_4)r^3, Z(D_4)s=Z(D_4)r^2s$ and $Z(D_4)rs=Z(D_4)r^3s$. It is now apparent that $D_4/Z(D_4)$ is not cyclic (neither of the cosets without $s$ can generate the ones with $s$, and both the ones with $s$ are of order 2). Thus $D_4/Z(D_4)$ is ``just like'' the Klein-4 group.\\
+
+\textbf{11.16)} Show that $(\mathbb{Q},+)/(\mathbb{Z},+)$ is an infinite group every element of which has finite order.\\
+
+Every element of $(\mathbb{Q},+)/(\mathbb{Z},+)$ can be written as $\mathbb{Z}+\frac{p}{q}$ where $p$ and $q$ are integers. By choosing $p=1$ and $q \in \mathbb{Z}$ we already have an infinite number of elements, though there are many more elements than these. Now, let $\mathbb{Z}+\frac{p}{q}$ be an arbitrary element of the group. We see $(\mathbb{Z}+\frac{p}{q})^2=\mathbb{Z}+2\frac{p}{q}$, and likewise $(\mathbb{Z}+\frac{p}{q})^3=\mathbb{Z}+3\frac{p}{q}$. More generally, $(\mathbb{Z}+\frac{p}{q})^n=\mathbb{Z}+n\frac{p}{q}$. Notice if we choose $n=q$ then we have $(\mathbb{Z}+\frac{p}{q})^q=\mathbb{Z}+q\frac{p}{q}=\mathbb{Z}+p=\mathbb{Z}$. Thus the order of $\mathbb{Z}+\frac{p}{q}$ is the finite integer $q$, and since every element can be written in this way, every element is of finite order.\pagebreak
+
+\textbf{11.17)} Let $G$ be abelian and let $H$ be a subgroup of $G$. Show that $G/H$ is abelian.\\
+
+The elements of $G/H$ can be written $Hg$ where $g$ is an element of $G$. The operation on $G/H$ is defined as $Ha*Hb=Hab$ where $ab$ is defined by the operation of $G$. Since this operation is commutative on the elements of $G$, this implies that $Hab=Hba$, which means $Ha*Hb=Hb*Ha$, so $G/H$ is abelian.\\
+
+\textbf{11.18} Let $G$ be cyclic and let $H$ be a subgroup of $G$. Show that $G/H$ is cyclic.
+
+As in the 11.17, the elements of $G/H$ can be written $Hg$ where $g$ is an element of $G$. The operation on two such elements $Ha$ and $Hb$ is defined as $Ha*Hb=Hab$ where $ab=a*b$ defined by the operation on $G$. Let $q$ be a generator for $G$. Since $q$ generates all elements of $G$, $Hq$ is a generator for $G/H$, which means $G/H$ is cyclic.\\
+
+\textbf{11.29)} Show that if $G/Z(G)$ is cyclic then $G$ is abelian.\\
+
+Let $G$ be a group such that $G/Z(G)$ is cyclic. Then there exists an element of $G/Z(G)$, call it $Hq$, which generates the whole group. By the definition of the operation on quotient groups, this implies $q$ generates at least as many elements as the index of $Z(G)$ in $G$. (Note that $q$ does not necessarily generate all of $G$, since there may be multiple elements which give the same cosets).
+
+I may need a hint on this one. It's really late, so I'm going to go to bed. Hopefully I'll get this before the rewrites are due.
+
+\end{document}
