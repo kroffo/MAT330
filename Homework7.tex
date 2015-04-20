@@ -43,7 +43,7 @@ Thus the right cosets of $Z(D_4)$ in $D_4$ are $Z(D_4)=Z(D_4)r^2, Z(D_4)r=Z(D_4)
 
 \textbf{11.16)} Show that $(\mathbb{Q},+)/(\mathbb{Z},+)$ is an infinite group every element of which has finite order.\\
 
-Every element of $(\mathbb{Q},+)/(\mathbb{Z},+)$ can be written as $\mathbb{Z}+\frac{p}{q}$ where $p$ and $q$ are integers. By choosing $p=1$ and $q \in \mathbb{Z}$ we already have an infinite number of elements, though there are many more elements than these. Now, let $\mathbb{Z}+\frac{p}{q}$ be an arbitrary element of the group. We see $(\mathbb{Z}+\frac{p}{q})^2=\mathbb{Z}+2\frac{p}{q}$, and likewise $(\mathbb{Z}+\frac{p}{q})^3=\mathbb{Z}+3\frac{p}{q}$. More generally, $(\mathbb{Z}+\frac{p}{q})^n=\mathbb{Z}+n\frac{p}{q}$. Notice if we choose $n=q$ then we have $(\mathbb{Z}+\frac{p}{q})^q=\mathbb{Z}+q\frac{p}{q}=\mathbb{Z}+p=\mathbb{Z}$. Thus the order of $\mathbb{Z}+\frac{p}{q}$ is the finite integer $q$, and since every element can be written in this way, every element is of finite order.\pagebreak
+Every element of $(\mathbb{Q},+)/(\mathbb{Z},+)$ can be written as $\mathbb{Z}+\frac{p}{q}$ where $p$ and $q$ are integers. By choosing $p=1$ and $q \in \mathbb{Z}^+$ we already have an infinite number of elements, since there are infinitely many distinct rational numbers $1/q$, and adding an integer to two distinct rational numbers results in two distinct rational numbers. Now, let $\mathbb{Z}+\frac{p}{q}$ be an arbitrary element of the group. We see $(\mathbb{Z}+\frac{p}{q})^2=\mathbb{Z}+2\frac{p}{q}$, and likewise $(\mathbb{Z}+\frac{p}{q})^3=\mathbb{Z}+3\frac{p}{q}$. More generally, $(\mathbb{Z}+\frac{p}{q})^n=\mathbb{Z}+n\frac{p}{q}$. Notice if we choose $n=q$ then we have $(\mathbb{Z}+\frac{p}{q})^q=\mathbb{Z}+q\frac{p}{q}=\mathbb{Z}+p=\mathbb{Z}$. Thus the order of $\mathbb{Z}+\frac{p}{q}$ is at most the finite number $q$, and since every element can be written in this way, every element is of finite order.\pagebreak
 
 \textbf{11.17)} Let $G$ be abelian and let $H$ be a subgroup of $G$. Show that $G/H$ is abelian.\\
 
@@ -55,8 +55,6 @@ As in the 11.17, the elements of $G/H$ can be written $Hg$ where $g$ is an eleme
 
 \textbf{11.29)} Show that if $G/Z(G)$ is cyclic then $G$ is abelian.\\
 
-Let $G$ be a group such that $G/Z(G)$ is cyclic. Then there exists an element of $G/Z(G)$, call it $Hq$, which generates the whole group. By the definition of the operation on quotient groups, this implies $q$ generates at least as many elements as the index of $Z(G)$ in $G$. (Note that $q$ does not necessarily generate all of $G$, since there may be multiple elements which give the same cosets).
-
-I may need a hint on this one. It's really late, so I'm going to go to bed. Hopefully I'll get this before the rewrites are due.
+Let $G$ be a group such that $G/Z(G)$ is cyclic. Then $G/Z(G)=\langle Z(G)q \rangle$ for some $q \in G$. Also, $\forall x \in G$, $x \in Z(G)y$ for some $y \in G$, so there exists a $z$ in $Z(G)$ such that $x=zy$ for some $y \in G$. Now let $x,y,q \in G$ such that $\langle Z(G)q \rangle = G/Z(G)$, $x \in Z(G)q^i$ and $y \in Z(G)q^j$ where $i,j \in \mathbb{Z}$. Now let $z_1,z_2 \in Z(G)$ such that $x=z_1a^i$ and $y=z_2a^j$. Since $z_1$ and $z_2$ are in the center of $G$, and $q^i$ and $q^j$ are powers of $q$, all of $z_1,z_2,q^i,q^j$ commute. Thus $xy=z_1q^iz_2q^j=z_2q^jz_1q^i=yx$, so $x$ and $y$ commute. Therefore any pair of elements of $G$ commute, so $G$ is abelian.
 
 \end{document}
