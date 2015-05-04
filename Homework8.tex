@@ -1,0 +1,267 @@
+\documentclass{scrartcl}
+\usepackage{amsmath,amssymb,commath}
+\setkomafont{disposition}{\normalfont\bfseries}
+
+\title{Abstract Algebra}
+\subtitle{Homework 8: 1, 12.1, 12.4, 12.13}
+\author{Kenny Roffo}
+\date{Due April 27}
+
+\newcommand{\normal}{\unlhd}
+
+\begin{document}
+\maketitle
+\textbf{1)} Prove $Q_8 \ncong D_8$.\\
+
+Assume for the sake of contradiction $Q_8 \cong D_8$. Then there exists a
+function, call it $f$, such that $f : Q_8 \rightarrow D_8$ is one-to-one and
+onto.
+
+$Q_8$ contains one element of order 2 (-1), while $D_8$ contains 3 elements of
+order 2 ($r^2$, $s$ and $sr^2$). Since an isomorphism must be one-to-one, $f(-1)$ can
+only be one of these three, and thus some element of $Q_8$ of order not equal to
+2 must map to $r^2$. But since these two elements have different order, this
+implies by our theorems that $f$ is not an isomorphism, thus $Q_8$ and $D_8$ are
+not isomorphic to each other.\\
+
+\textbf{12.1)} Which of the following mappings are homomorphisms? Monomorphisms?
+Epimorphisms? Isomorphisms?\\
+
+\textbf{a)} $G = (\mathbb{R}-\{0\},\cdot),H=(\mathbb{R}^+,\cdot); 
+             \varphi : G \rightarrow H$ is given by $\varphi(x)=|x|$\\
+
+Let $x,y \in G$. We see $\varphi(xy)=|xy|=|x||y|=\varphi(x)\varphi(y)$, so
+$\varphi$ is a homomorphism. Now let $a=2$, $b=-2$. We see $a,b \in G$ and 
+$\varphi(a)=|2|=2=|-2|\varphi(b)$, so $\varphi$ is not one-to-one. Now let 
+$z \in H$. Then $z$ is positive, thus $z=|z|$ by definition of absolute value.
+Also, since $z \in \mathbb{R^+}$, then $z \in \mathbb{R}$, and
+$\varphi(z)=|z|=z$, so $\varphi$ is onto. Therefore $\varphi$ is an epimorphism.
+\\
+
+\textbf{b)} $G=(\mathbb{R}^+,\cdot); \varphi:G \rightarrow G$ is given by
+            $\varphi(x) = \sqrt{x}$.\\
+
+Let $x,y \in G$. Then $\varphi(xy)=\sqrt{xy}=\sqrt{x}\sqrt{y}
+=\varphi(x)\varphi(y)$, so $\varphi$ is a homomorphism. Now let $a,b \in G$
+such that $\varphi(a)=\varphi(b)$. Then $\sqrt{a}=\sqrt{b}$, and squaring both
+sides we see $a=b$, thus $\varphi$ is one-to-one. Now let $z \in G$.
+Then $z^2 \in G$, since $\mathbb{R}^+$ is closed under multiplication, and we
+see $\sqrt{z^2}=z$. Thus $\varphi$ is onto, so $\varphi$ is an isomorphism.
+(Actually, since $\varphi$ is an isomorphism from $G$ onto itself, $\varphi$ is
+an automorphism)\\
+
+\textbf{c)} $G=$ group of polynomials $p(x)$ with real coefficients, under
+addition of polynomials; $\varphi : G \rightarrow G$ is given by 
+$\varphi[p(x)]=p(1)$.\\
+
+Let $f,g \in G$. Then $\varphi(f+g)=(f+g)(1)=f(1)+g(1)=\varphi(f)\varphi(g)$,
+thus $\varphi$ is a homomorphism. Now let $A = x^3$ and $B=x^7$. Then
+$\varphi(A)=1=\varphi(B)$, so $\varphi$ is not one-to-one. Now let $z \in
+\mathbb{R}^+$, and consider the function $Y(x)=z$, which is in $G$. Then
+$\varphi(Y)=z$, thus $\varphi$ is onto, so $\varphi$ is an epimorphism.\\
+
+\textbf{d)} $G$ is as in \textbf{c}; $\varphi : G \rightarrow G$ is given by
+$\varphi[p(x)]=p'(x)$.\\
+
+Let $f,g \in G$. Then $\varphi(f+g)=\od{}{x}(f+g)=\od{f}{x}+\od{g}{x}=\varphi(f)
++\varphi(g)$, so $\varphi$ is a homomorphism. Now let $A = x^2$ and
+$B = x^2 + 2$. Then $\varphi(A) = 2x = \varphi(B)$, but $A \neq B$, so $\varphi$
+is not one-to-one. Now let $Y \in G$. Then $Y$ can be written in the form:
+\begin{displaymath}
+Y = a_1x^n + a_2x^{n-1} + ... + a_{n-1}x + a_n
+\end{displaymath}
+Here, $n$ is the degree of $Y$. Consider the function $Z$ as defined by:
+\begin{displaymath}
+Z = \frac{a_1}{n}x^n + \frac{a_2}{n-1}x^{n-1} + ... + \frac{a_{n-1}}{2}x^2 + a_nx
+\end{displaymath}
+Note that $Z \in G$, and $\varphi(Z) = Y$. This implies that $\varphi$ is onto.
+Therefore $\varphi$ is an epimorphism.\\
+
+\textbf{e)} $G=$ the group of subsets of $\{1,2,3,4,5\}$ under symmetric
+difference; $A = \{1,3,4\}$ and $\varphi : G \rightarrow G$ is given by
+$\varphi(B) = A \triangle B$, for all $B \subset \{1,2,3,4,5\}$.\\
+
+(I still have to work this one out)\\\\
+\textbf{12.4)} In each case, determine whether or not the two given groups are
+               isomorphic:
+
+\textbf{a)} $(\mathbb{Z}_{12},\bigoplus)$ and $(\mathbb{Q}^+,\cdot)$\\
+
+Since $|\mathbb{Z}_{12}| = 12 \neq \infty = |\mathbb{Q}^+|$, there cannot exist
+a bijection between these two sets, thus there cannot be an isomorphism between
+these two groups.\\
+
+\textbf{b)} $(2\mathbb{Z},+)$ and $(3\mathbb{Z},+)$\\
+
+These two groups are isomorphic by the function $\varphi : 2\mathbb{Z}
+\rightarrow 3\mathbb{Z}$ as defined by $\varphi(x) = \frac{3}{2}x$.\\
+Let $x,y \in 2\mathbb{Z}$. We see 
+\begin{align*}
+\varphi(x+y) &= \frac{3}{2}(x+y)\\
+             &= \frac{3}{2}x + \frac{3}{2}y\\
+             &= \varphi(x) + \varphi(y)
+\end{align*}
+Thus $\varphi$ is a homomorphism. Now assume $\varphi(x)=\varphi(y)$. Then
+$\frac{3}{2}x=\frac{3}{2}y$, and this implies $x=y$, so $\varphi$ is a
+monomorphism. Now let $z \in 3\mathbb{Z}$. Then $z = 3a$ for some
+$a \in \mathbb{Z}$. Note that $2a \in 2\mathbb{Z}$, and $\varphi(2a)=3a=z$.
+So $\varphi$ is an epimorphism. Therefore $\varphi$ is an isomorphism.\\
+
+\textbf{c)} $(\mathbb{R}-\{0\},\cdot)$ and $(\mathbb{R},+)$\\
+No isomorphism exists between these two groups since $-1 \in \mathbb{R} - \{0\}$
+and $o(-1) = 2$, but no element of $(\mathbb{R},+)$ has order 2.\\
+
+\textbf{d)} $V$ and $\mathbb{Z}_2 \times \mathbb{Z}_2$\\
+These two groups are isomorphic by the function $\varphi : V \rightarrow \mathbb{Z}_2$ as defined by
+\begin{align*}
+\varphi(e) &= e\\
+\varphi(a) &= (1,0)\\
+\varphi(b) &= (0,1)\\
+\varphi(c) &= (1,1)
+\end{align*}\\
+One can check that this is a homomorphism by going through each case, and I have
+done so. Due to the extensiveness of writing this out, I will not be doing so
+here. Once you are convinced that it is a homomorphism, note that this
+definition is obviously one-to-one and onto, so it is an isomorphism.\\
+
+\textbf{e)} $\mathbb{Z}_3 \times \mathbb{Z}_3$ and $\mathbb{Z}_9$\\
+No isomorphism exists between these two groups. Recall $o(x)=o(\varphi(x))$ for
+an isomorphism $\varphi$. $5 \in \mathbb{Z}_9$ has $o(5)=9$, but no element of
+$\mathbb{Z}_3 \times \mathbb{Z}_3$ has order 9 (in fact all of them except the
+identity have order 3). Therefore no isomorphism can exist between these two
+groups.\\
+
+\textbf{f)} $(\mathbb{R}-\{0\},\cdot)$ and
+$(\mathbb{R}^+,\cdot)\times(\mathbb{Z}_2,\bigoplus)$\\
+These groups are isomorphic under the function $\varphi : \mathbb{R} - \{0\}
+\rightarrow (\mathbb{R}^+,\cdot)\times(\mathbb{Z}_2,\bigoplus)$ as defined by
+$\varphi(x) =
+  \begin{cases}
+    (|x|,1) & x < 0\\
+    (|x|,0) & x > 0
+  \end{cases}$
+Let $x,y \in \mathbb{R} - \{0\}$. Either $x$ and $y$ are both negative or
+positive together, or they have different signs. Consider when both $x$ and $y$
+are positive:
+\begin{align*}
+\varphi(xy) &= (|xy|,0)\\
+            &= (|x||y|,0)\\
+            &= (|x|,0)(|y|,0)\\
+            &= \varphi(x)\varphi(y)
+\end{align*}
+so this case satisfies the definition of a homomorphism. Now consider when $x$
+and $y$ are negative (remember, the product of two negatives is positive):
+\begin{align*}
+\varphi(xy) &= (|xy|,0)\\
+            &= (|x||y|,0)\\
+            &= (|x|,1)(|y|,1)\\
+            &= \varphi(x)\varphi(y)
+\end{align*}
+so this case also satisfies the definition of a homomorphism. Now consider the
+case where one is positive, and one is negative. Without loss of generality
+we will consider $x$ to be the positive one:
+\begin{align*}
+\varphi(xy) &= (|xy|,1)\\
+            &= (|x||y|,1)\\
+            &= (|x|,0)(|y|,1)\\
+            &= \varphi(x)\varphi(y)
+\end{align*}
+so every case satisfies the definition of a homomorphism, so $\varphi$ is a
+homomorphism. Now assume $\varphi(x)=\varphi(y)$. Then (with $a,b \in \{0,1\}$):
+\begin{align*}
+         &(|x|,a) = (|y|,b)\\
+\implies &|x|=|y| a=b\\
+\end{align*}
+This is true if either $x=y$ or $x=-y$. But since $a=b$, we know $x$ and $y$
+have the same sign, so $x=y$. Therefore $\varphi$ is one-to-one. Now consider
+$(z,c) \in (\mathbb{R}^+,\cdot)\times(\mathbb{Z}_2,\bigoplus)$. If $c=0$, then
+$z \in \mathbb{R} - \{0\}$ and $\varphi(z) = (z,0)$. If, however, $z=1$, then
+$-z \in \mathbb{R} - \{0\}$ and $\varphi(-z) = (z,1)$. Therefore $\varphi$ is
+onto. Therefore we have shown that $\varphi$ is an isomorphism.\\
+
+\textbf{g)} $(\mathbb{Z},+)$ and $(\mathbb{Z},*)$ where $a*b=a+b-1$\\
+These two groups are isomorphic by the function $\varphi : (\mathbb{Z},+)
+\rightarrow  (\mathbb{Z},*)$ as defined by $\varphi(x)=x+1$.
+Let $x,y \in \mathbb{Z}$. We see:
+\begin{align*}
+\varphi(x+y) &= x+y+1\\
+             &= (x+1)+(y+1)-1\\
+             &= \varphi(x)\varphi(y)
+\end{align*}
+so $\varphi$ is a homomorphism. Now assume $\varphi(x)=\varphi(y)$. Then
+$x+1=y+1 \implies x=y$, so $\varphi$ is one-to-one. Now let $z \in \mathbb{Z}$.
+Then $z-1 \in \mathbb{Z}$ and $\varphi(z-1) = z-1+1 = z$. Therefore $\varphi$ is
+onto, so $\varphi$ is an isomorphism.\\
+
+\textbf{h)} $G$ and $G \times G$ where $G=\mathbb{Z}_2 \times \mathbb{Z}_2
+\times \mathbb{Z}_2 \times \mathbb{Z}_2 \times...$\\
+Note that all elements of $G$ have the form $(a_1,a_2,a_3,....)$. These two
+groups are isomorphic by the function $\varphi : G \rightarrow G \times G$ as
+defined by $\varphi[(a_1,a_2,a_3,...)]=\left((a_1,a_3,a_5,...),(a_2,a_4,a_6,...)\right)$.
+Let $(a_1,a_2,a_3,...),(b_1,b_2,b_3,...) \in G$. We see:
+\begin{align*}
+\varphi[(a_1,a_2,a_3,...)(b_1,b_2,b_3,...)]
+ &= \varphi(a_1+b_1,a_2+b_2,a_3+b_3,...)\\
+ &= \left((a_1+b_1,a_3+b_3,...),(a_2+b_2,a_4+b_4,...)\right)\\
+ &= \left((a_1,a_3,...),(a_2,a_4,...)\right)\left((b_1,b_3,...),(b_2,b_4,...)\right)\\
+ &= \varphi[(a_1,a_2,a_3,...)]\varphi[(b_1,b_2,b_3,...)]
+\end{align*}
+so $\varphi$ is a homomorphism. Now assume $\varphi[(a_1,a_2,a_3,...)] = 
+\varphi[(b_1,b_2,b_3,...)]$. Then $\left((a_1,a_3,...),(a_2,a_4,...)\right) =
+\left((b_1,b_3,...),(b_2,b_4,...)\right)$, which means that $a_1=b_1$, $a_2=b_2$,
+ $a_3=b_3$, ... so $(a_1,a_2,a_3,...)=(b_1,b_2,b_3,...)$ and $\varphi$ is one-to-one. Now let 
+$\left((z_1,z_3,z_5,...),(z_2,z_4,z_5,...)\right) \in G \times G$. Then 
+$(z_1,z_2,z_3,...) \in G$ and $\varphi[(z_1,z_2,z_3,...)] =
+\left((z_1,z_3,z_5,...),(z_2,z_4,z_5,...)\right)$ Thus $\varphi$ is onto, therefore $\varphi$ is an isomorphism.\\
+
+\textbf{i)} $(\mathbb{R}-\{0\},\cdot)$ and $(\mathbb{R}-\{1\},*)$
+where $a*b = a+b-ab$\\
+These two groups are isomorphic by the function $\varphi : \mathbb{R}-\{0\}
+\rightarrow (\mathbb{R}-\{1\},*)$ as defined by $\varphi(x) = 1-x$.
+Let $x,y \in (\mathbb{R}-\{0\},\cdot)$. We see:
+\begin{align*}
+\varphi(xy) &= 1-xy\\
+            &= (1-x)+x+(1-y)+y-1-xy\\
+            &= (1-x)+(1-y)-(1-x-y+xy)\\
+            &= (1-x)+(1-y)-(1-x)(1-y)\\
+            &= \varphi(x)\varphi(y)
+\end{align*}
+so $\varphi$ is a homomorphism. Now assume $\varphi(x)=\varphi(y)$. Then
+$1-x=1-y \implies x=y$, so $\varphi$ is one-to-one. Now let $z \in \mathbb{R}-
+\{1\}$. Then $1-z \in \mathbb{R}-\{0\}$ and $\varphi(1-z) = 1-(1-z) = z$, so
+$\varphi$ is onto. Therefore, $\varphi$ is an isomorphism.\\\\
+\textbf{12.13)} Let $\varphi : G \rightarrow H$ be a homomorphism.
+
+\textbf{a)} Show that if $H$ is abelian and $\varphi$ is one-to-one, then $G$
+is abelian.
+
+Assume $H$ is abelian and $\varphi$ is one-to-one. Let $g_1,g_2 \in G$. Then
+$\varphi(g_1g_2)=\varphi(g_1)\varphi(g_2)=\varphi(g_2)\varphi(g_1)=
+\varphi(g_2g_1)$. That is, $\varphi(g_1g_2)=\varphi(g_2g_1)$. But since 
+$\varphi$ is one-to-one, this means that $g_1g_2=g_2g_1$, so $G$ is abelian.\\
+
+\textbf{b)} Show that if $G$ is abelian and $\varphi$ is onto, then $H$ is
+abelian.
+
+Assume $G$ is abelian and $\varphi$ is onto. Since $\varphi$ is onto, every
+element of $H$ can be written as $\varphi(g)$ for some $g \in G$. Thus for all
+$h_1=\varphi(g_1),h_2=\varphi(g_2) \in H$ we have
+\begin{align*}
+h_1h_2 &= \varphi(g_1)\varphi(g_2)\\
+      &= \varphi(g_1g_2)\\
+      &= \varphi(g_2g_1)\\
+      &= \varphi(g_2)\varphi(g_1)\\
+      &= h_2h_1
+\end{align*}
+That is, $h_1h_2=h_2h_1$, so $H$ is abelian.\\
+
+\textbf{c)} Show that if $\varphi$ is an isomorphism, then $G$ is abelian if and
+only if $H$ is abelian.
+
+Assume $\varphi$ is an isomorphism. Then $\varphi$ is one-to-one and by
+\textbf{a} $H$ abelian $\implies$ $G$ abelian. Also, $\varphi$ is onto, and by
+\textbf{b} $G$ abelian $\implies$ $H$ abelian. Thus when $\varphi$ is an
+isomorphism $H$ and $G$ must be abelian together, thus $G$ is abelian if and
+only if $H$ is abelian.
+
+\end{document}
